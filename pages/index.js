@@ -1,65 +1,76 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+import React from "react";
+import {
+  ChakraProvider,
+  Flex,
+  Box,
+  Link,
+  Container,
+  Text,
+  InputGroup,
+  InputLeftAddon,
+  Input,
+  Button,
+} from "@chakra-ui/react";
+const App = () => (
+  <ChakraProvider resetCSS>
+    <Flex flexDirection="column" minHeight="full">
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
+        backgroundColor="whiteAlpha.500"
+        p="20px"
+        border="0px 0px 5px 0px"
+      >
+        <Box>
+          <Link fontSize="lg">Vücud Kitle Endeksini Hesapla</Link>
+        </Box>
+        <Text fontSize="2xl">VKI </Text>
+        <Link fontSize="lg">Vucüd Kitle Endeksi Nedir ? </Link>
+      </Flex>
+      <Container
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        minWidth="full"
+        height="auyo"
+        backgroundColor="whiteAlpha.500"
+        minHeight={600}
+      >
+        <Flex
+          width="50%"
+          height="500px"
+          border="10px"
+          borderRadius="5px"
+          backgroundColor="whiteAlpha.500"
+          justifyContent="center"
+          alignItems="center"
+          flexDirection="column"
+          mt="20px"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
-}
+          <InputGroup mb={50}>
+            <InputLeftAddon>Kilonuz</InputLeftAddon>
+            <Input />
+          </InputGroup>
+          <InputGroup mb="30px">
+            <InputLeftAddon>Boyunuz</InputLeftAddon>
+            <Input />
+          </InputGroup>
+          <Button
+            variant="solid"
+            size="md"
+            mb="20px"
+            pl="20px"
+            pr="20px"
+            pt="10px"
+            pb="10px"
+          >
+            Hesapla
+          </Button>
+          <Text mb="20px">vücud kitle endeksiniz: 23.21324</Text>
+          <Text>Normal Kilolu</Text>
+        </Flex>
+      </Container>
+    </Flex>
+  </ChakraProvider>
+);
+export default App;
