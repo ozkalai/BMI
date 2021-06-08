@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Flex,
   Box,
@@ -15,13 +15,38 @@ export default function InputArea() {
   // States
   const [kilogram, setKilogram] = React.useState("");
   const [height, setHeight] = React.useState("");
+  const [bodyIndex, setBodyIndex] = React.useState("");
+  const [bodyType, setBodyType] = React.useState("");
+  const [bodyColor, setBodyColor] = React.useState("");
+  console.log(bodyIndex);
+  console.log(bodyType);
 
   // Event handlers
   const handleKilogramChange = (event) => setKilogram(event.target.value);
   const handleHeightChange = (event) => setHeight(event.target.value);
   const handleClick = () => {
-    console.log(kilogram * height);
+    const heightAsMeter = height / 100;
+    const bmi = kilogram / heightAsMeter ** 2;
+    setBodyIndex(bmi.toFixed(1));
   };
+  const getBodyType = (bmi) => {
+    if (18.5 > bmi) {
+      return { type: "Zayıf", color: "#639dcd" };
+    } else if (18.5 < bmi && bmi < 24.9) {
+      return { type: "Normal", color: "#40a770" };
+    } else if (25 < bmi && bmi < 29.9) {
+      return { type: "Fazla Kilolu", color: "#fdc800" };
+    } else if (30 < bmi && bmi < 39.9) {
+      return { type: "Obez", color: "#f2720f" };
+    } else if (40 < bmi) {
+      return { type: "Morbid Obez", color: "#de060b" };
+    }
+  };
+  useEffect(() => setBodyType(getBodyType(bodyIndex).type), [bodyIndex]);
+  useEffect(() => setBodyColor(getBodyType(bodyIndex).color), [bodyType]);
+
+  // functions
+
   return (
     <Flex
       display="flex"
@@ -76,8 +101,14 @@ export default function InputArea() {
         >
           Hesapla
         </Button>
-        <Text mb="20px">vücud kitle endeksiniz: 23.21324</Text>
-        <Text>Normal Kilolu</Text>
+        {bodyIndex && (
+          <>
+            <Text mb="20px">Vücud Kitle Endeksiniz: {bodyIndex}</Text>
+            <Text fontSize="2xl" fontWeight="bold" color={bodyColor}>
+              {bodyType}
+            </Text>
+          </>
+        )}
       </Box>
     </Flex>
   );
