@@ -18,6 +18,8 @@ export default function InputArea() {
   const [bodyIndex, setBodyIndex] = React.useState("");
   const [bodyType, setBodyType] = React.useState("");
   const [bodyColor, setBodyColor] = React.useState("");
+  const [alert, setAlert] = React.useState("");
+
   console.log(bodyIndex);
   console.log(bodyType);
 
@@ -27,7 +29,11 @@ export default function InputArea() {
   const handleClick = () => {
     const heightAsMeter = height / 100;
     const bmi = kilogram / heightAsMeter ** 2;
-    setBodyIndex(bmi.toFixed(1));
+    if (bmi > 0) {
+      setBodyIndex(bmi.toFixed(1));
+    } else {
+      setAlert("Lütfen boy ve kilonuzu girin!");
+    }
   };
   const getBodyType = (bmi) => {
     if (18.5 > bmi) {
@@ -51,8 +57,8 @@ export default function InputArea() {
     <Flex
       display="flex"
       justifyContent="center"
+      minWidth="50%"
       alignItems="center"
-      minWidth="full"
       height="auto"
       backgroundColor="whiteAlpha.500"
       minHeight={600}
@@ -109,6 +115,7 @@ export default function InputArea() {
             </Text>
           </>
         )}
+        {alert && !bodyIndex && <Text>{alert}</Text>}
       </Box>
     </Flex>
   );
