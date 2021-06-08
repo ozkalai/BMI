@@ -11,7 +11,7 @@ import {
   Input,
   Button,
 } from "@chakra-ui/react";
-import Navigation from "./Navigation";
+import Navigation from "./Navigation/Navigation";
 import InputArea from "./InputArea";
 import Wheel from "./wheel/Wheel";
 const Calculator = () => {
@@ -19,7 +19,12 @@ const Calculator = () => {
     <ChakraProvider resetCSS>
       <Flex flexDirection="column" minHeight="full">
         <Navigation />
-        <Flex width="100vh">
+        <Flex
+          marginTop="70px"
+          display="flex"
+          justifyContent="space-between"
+          marginX="0"
+        >
           <InputArea />
           <Wheel />
         </Flex>
