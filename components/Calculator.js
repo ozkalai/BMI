@@ -18,7 +18,6 @@ const Calculator = () => {
   return (
     <ChakraProvider resetCSS>
       <Flex flexDirection="column" minHeight="full">
-        <Navigation />
         <Flex
           marginTop="70px"
           display="flex"

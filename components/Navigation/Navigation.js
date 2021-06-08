@@ -5,16 +5,16 @@ import styles from "./Navigation.module.scss";
 export default function Navigation() {
   return (
     <Box
+      background="#393939"
       border="5px"
       borderColor="gray.700"
       display="flex"
       justifyContent="space-between"
       alignItems="center"
       p="30px 50px"
-      background="gray.500"
     >
       <Box>
-        <Link fontSize="lg" color="white" href="/index">
+        <Link fontSize="lg" color="white" href="/">
           Vücud Kitle Endeksini Hesapla
         </Link>
       </Box>
@@ -23,7 +23,7 @@ export default function Navigation() {
         <span className={styles.span}>itle</span> E
         <span className={styles.span}>ndeksi</span>
       </Text>
-      <Link color="white" fontSize="lg">
+      <Link href="/about" color="white" fontSize="lg">
         Vucüd Kitle Endeksi Nedir ?
       </Link>
     </Box>
