@@ -18,7 +18,7 @@ export default function Wheel() {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      minWidth="full"
+      minWidth="50%"
       height="auto"
       backgroundColor="whiteAlpha.500"
       minHeight={600}
