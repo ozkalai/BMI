@@ -83,7 +83,7 @@ export default function InputArea() {
         padding="40px"
       >
         <InputGroup mb={50}>
-          <InputLeftAddon>Kilonuz</InputLeftAddon>
+          <InputLeftAddon minWidth="100px">Kilonuz</InputLeftAddon>
           <Input
             value={kilogram}
             onChange={handleKilogramChange}
@@ -92,7 +92,7 @@ export default function InputArea() {
           />
         </InputGroup>
         <InputGroup mb="30px">
-          <InputLeftAddon>Boyunuz</InputLeftAddon>
+          <InputLeftAddon minWidth="100px">Boyunuz</InputLeftAddon>
           <Input type="number" placeholder="cm" onChange={handleHeightChange} />
         </InputGroup>
         <Button
