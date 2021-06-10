@@ -21,6 +21,7 @@ const Calculator = () => {
         <Flex
           marginTop="70px"
           display="flex"
+          flexDirection={["column", "column", "row", "row"]}
           justifyContent="space-between"
           marginX="0"
         >
