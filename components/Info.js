@@ -19,11 +19,10 @@ export default function Info() {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      marginTop="100px"
+      marginTop="200px"
     >
       <Box
-        maxWidth="40%"
-        border="yellowgreen"
+        maxWidth="100%"
         display="flex"
         flexDirection="column"
         justifyContent="center"
@@ -32,6 +31,7 @@ export default function Info() {
         rounded="sm"
         bg="whitesmoke"
         padding="50px"
+        marginX={{ sm: "10px" }}
       >
         <Heading>Vücut Kitle Endeksi</Heading>
         <Text textAlign="center" fontSize="20px">
