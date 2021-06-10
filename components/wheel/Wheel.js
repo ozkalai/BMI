@@ -19,7 +19,12 @@ export default function Wheel() {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      minWidth="50%"
+      minWidth={{
+        base: "50%",
+        sm: "50%",
+        md: "50%",
+        lg: "50%",
+      }}
       height="auto"
       backgroundColor="whiteAlpha.500"
       minHeight={600}
@@ -35,22 +40,17 @@ export default function Wheel() {
         alignItems="center"
         flexDirection="column"
         mt="20px"
-        border="solid"
         boxShadow="xl"
         p="6"
-        rounded="sm"
         bg="white"
-        borderColor="#fff"
-        borderRadius="5px"
-        padding="40px"
       >
         <Image
           position="absolute"
-          width="90%"
-          height="90%"
           objectFit="cover"
           src="https://www.aysetolga.com/wp-content/uploads/2021/02/vki-5.jpg"
           alt="Dan Abramov"
+          objectPosition="center"
+          padding={{ base: "50px", sm: "0px", md: "5px", lg: "50px" }}
         />
       </Box>
     </Flex>
