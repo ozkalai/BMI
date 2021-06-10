@@ -1,6 +1,7 @@
 import React from "react";
 import Calculator from "../components/Calculator";
 import Navigation from "../components/Navigation/Navigation";
+
 import {
   ChakraProvider,
   Flex,
@@ -15,10 +16,12 @@ import {
 } from "@chakra-ui/react";
 const App = () => {
   return (
-    <Flex display="flex" flexDirection="column">
-      <Navigation background="red" />
-      <Calculator />
-    </Flex>
+    <ChakraProvider>
+      <Flex display="flex" flexDirection="column">
+        <Navigation background="red" />
+        <Calculator />
+      </Flex>
+    </ChakraProvider>
   );
 };
 export default App;
