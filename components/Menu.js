@@ -18,6 +18,7 @@ export default function Menu({ isOpen, setIsOpen }) {
         bg="#393939"
         height="100vh"
         zIndex="999"
+        display={{ lg: "none", sm: "block" }}
       >
         <Box
           color="white"
